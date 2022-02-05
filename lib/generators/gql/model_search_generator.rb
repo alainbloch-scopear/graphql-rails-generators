@@ -4,6 +4,7 @@ module Gql
     include GqlGeneratorBase
     source_root File.expand_path('../templates', __FILE__)
     argument :model_name, type: :string
+    class_option :directory, type: :string, default: 'graphql'
 
     def search
       inject_into_file(

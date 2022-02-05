@@ -8,6 +8,9 @@ module Gql
 
     argument :mutation_prefix, type: :string
     argument :model_name, type: :string
+
+    class_option :directory, type: :string, default: 'graphql'
+
     source_root File.expand_path('../templates', __FILE__)
 
     # hack to keep NamedBase helpers working

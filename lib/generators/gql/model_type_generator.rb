@@ -10,6 +10,7 @@ module Gql
     class_option :include_columns, type: :array, default: []
     class_option :superclass, type: :string, default: 'Types::BaseObject'
     class_option :namespace, type: :string, default: 'Types'
+    class_option :directory, type: :string, default: 'graphql'
 
     def type
       name = options['name'].nil? ? "#{model_name}Type" : options['name']

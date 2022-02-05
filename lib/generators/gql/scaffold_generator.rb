@@ -11,6 +11,7 @@ module Gql
     class_option :include_columns, type: :array, default: []
     class_option :superclass, type: :string, default: 'Types::BaseInputObject'
     class_option :namespace, type: :string, default: 'Types::Input'
+    class_option :directory, type: :string, default: 'graphql'
 
     def scaffold
       generate_queries
