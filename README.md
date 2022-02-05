@@ -33,6 +33,10 @@ $ rails generate gql:model_type MODEL_CLASS
 
 - `--name` - customize the file/class name, useful if you don't want the default Type suffix.
 
+- `--namespace` - customize the name space of the file/class. Default is `Types::Input`.
+
+- `--directory` - customize the directory that the files are installed. Defaults is `graphql` so the files will be in `app/graphql` by default.
+
 #### Example
 
 ```ruby
@@ -60,6 +64,8 @@ rails generate gql:input Post
 
 - `--name` - customize the file/class name, useful if you don't want the default Input suffix.
 
+- `--directory` - customize the directory that the files are installed. Defaults is `graphql` so the files will be in `app/graphql` by default.
+
 #### Example
 
 ```ruby
@@ -81,6 +87,10 @@ Generate create, update and delete mutations for a model.
 ```
 rails generate gql:mutations Post
 ```
+
+#### Options
+
+- `--directory` - customize the directory that the files are installed. Defaults is `graphql` so the files will be in `app/graphql` by default.
 
 #### Example
 
@@ -107,6 +117,10 @@ The mutation generator generates something akin to an "upsert" mutation. It take
 ```
 rails generate gql:mutation Update Post
 ```
+
+#### Options
+
+- `--directory` - customize the directory that the files are installed. Defaults is `graphql` so the files will be in `app/graphql` by default.
 
 #### Example
 
@@ -149,6 +163,10 @@ If you have not yet created a base search resolver:
 `rails g gql:model_search_base`
 
 \*_Adds `gem 'search_object_graphql'` to gemfile_
+
+#### Options
+
+- `--directory` - customize the directory that the files are installed. Defaults is `graphql` so the files will be in `app/graphql` by default.
 
 #### Example
 

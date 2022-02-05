@@ -2,6 +2,8 @@ require 'rails/generators/base'
 
 module Gql
   module GqlGeneratorBase
+    class_option :directory, type: :string, default: 'graphql'
+
     protected
 
     # Generate a namedspaced class name with the mutation prefix
@@ -42,7 +44,7 @@ module Gql
     end
 
     def root_directory(namespace)
-      "app/graphql/#{namespace.underscore}"
+      "app/#{directory}/#{namespace.underscore}"
     end
 
     def wrap_in_namespace(namespace)
