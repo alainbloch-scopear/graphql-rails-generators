@@ -5,7 +5,7 @@ module Gql
 
     def generate_model_search_base
       gem 'search_object_graphql'    
-      template('model_search_base.rb', "app/#{directory}/resolvers/base_search_resolver.rb")
+      template('model_search_base.rb', "app/#{options[:directory]}/resolvers/base_search_resolver.rb")
     end
   end
 end

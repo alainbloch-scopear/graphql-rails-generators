@@ -13,7 +13,7 @@ module Gql
     class_option :namespace, type: :string, default: 'Types::Input'
 
     def mutations
-      insert_into_file("app/#{options['directory']}/mutations/base_mutation.rb", before: "\tend\nend") do
+      insert_into_file("app/#{options[:directory]}/mutations/base_mutation.rb", before: "\tend\nend") do
         "def model_errors!(model)\n# define me!\n"
       end
       generate_mutation('update')
@@ -24,8 +24,8 @@ module Gql
     protected
     def generate_mutation(prefix)
       file_name = "#{prefix}_#{singular_name}"
-      template("#{prefix}_mutation.rb", "app/#{options['directory']}/mutations/#{class_path.join('/')}/#{file_name.underscore}.rb")
-      insert_into_file("app/#{options['directory']}/types/mutation_type.rb", after: "  class MutationType < Types::BaseObject\n") do
+      template("#{prefix}_mutation.rb", "app/#{options[:directory]}/mutations/#{class_path.join('/')}/#{file_name.underscore}.rb")
+      insert_into_file("app/#{options[:directory]}/types/mutation_type.rb", after: "  class MutationType < Types::BaseObject\n") do
         "    field :#{file_name.camelcase(:lower)}, mutation: Mutations::#{prefixed_class_name(prefix)}\n"
       end
     end

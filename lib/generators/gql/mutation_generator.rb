@@ -20,8 +20,8 @@ module Gql
   
     def mutation
       file_name = "#{mutation_prefix}_#{singular_name}"
-      template('model_mutation.rb', "app/#{options['directory']}/mutations/#{class_path.join('/')}/#{file_name.underscore}.rb")
-      insert_into_file("app/#{options['directory']}/types/mutation_type.rb", after: "  class MutationType < Types::BaseObject\n") do
+      template('model_mutation.rb', "app/#{options[:directory]}/mutations/#{class_path.join('/')}/#{file_name.underscore}.rb")
+      insert_into_file("app/#{options[:directory]}/types/mutation_type.rb", after: "  class MutationType < Types::BaseObject\n") do
         "\t\tfield :#{file_name.camelcase(:lower)}, mutation: Mutations::#{prefixed_class_name(mutation_prefix)}\n"
       end
     end

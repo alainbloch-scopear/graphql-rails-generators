@@ -42,7 +42,7 @@ module Gql
     end
 
     def root_directory(namespace)
-      "app/#{directory}/#{namespace.underscore}"
+      "app/#{options[:directory}/#{namespace.underscore}"
     end
 
     def wrap_in_namespace(namespace)
